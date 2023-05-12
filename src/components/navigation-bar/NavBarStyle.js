@@ -1,39 +1,16 @@
-import { device } from "../../Layout/StylesGlobal";
+import { BoxStyle, device } from "../../Layout/StylesGlobal";
 import styled, { keyframes } from "styled-components";
 
 export const NavBarContainer = styled.nav`
   /* position: relative; */
   width: 100%;
   height: 5rem;
-  background-color: #1aa738;
+  background-color: red;
   display: inline-flex;
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
-const carFast = keyframes`
- from {
-  transform: translateX(-100%);
-}
-to {
-    transform: translateX(1000%);
-  }
-`;
-export const Car = styled.img`
-  position: absolute;
-  height: 20%;
-  z-index: 1;
-  transform: translateX(-100%);
-  animation: ${carFast} 2s ease-in-out;
-  display: none;
-  //! Desktop
-  @media ${device.md} {
-    &.animate {
-      display: inline;
-    }
-    /* animation: ${(props) => (props.animate ? carFast : "")} 0.8s ease-in-out
-      forwards; */
-  }
+
 `;
 
 export const Logo = styled.img`
@@ -62,7 +39,6 @@ export const LinksContainer = styled.div`
   .link {
     //
     filter: drop-shadow(3px 3px 3px #222);
-
     text-decoration: none;
     flex: 1;
     color: #222;
@@ -129,12 +105,13 @@ export const BgMenu = styled.div`
   box-shadow: 1px 2px 3px black;
   z-index: -1;
   transition: all 0.6s ease;
+  box-shadow: ${BoxStyle.boxShadow};
   &.open-menu {
     border-radius: 0 0 20% 0;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 2;
   }
 `;

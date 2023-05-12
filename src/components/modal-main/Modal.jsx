@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import bg from "../../assets/modal.jpg";
+import bg from "@/assets/loaders/giphy.gif";
 const sweep = keyframes`
   0% {
     transform: translateX(-100%);
@@ -15,7 +15,7 @@ const ModalContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-color: #fff; */
+  /* background-color: transparent; */
   background-image: url(${bg});
   background-size: cover;
   background-position: center;
@@ -23,7 +23,7 @@ const ModalContainer = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 400;
-  animation: ${sweep} 1s ease-out forwards;
+  animation: ${sweep} 3s ease-out forwards;
 `;
 export const Modal = () => {
   return <ModalContainer bg={bg} />;

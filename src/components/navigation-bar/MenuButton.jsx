@@ -30,7 +30,7 @@ const Button = styled.div`
     margin: 10px 10px;
     cursor: pointer;
     display: inline-block;
-    z-index: 1;
+    z-index: 3;
   }
   .nav-icon-1 span {
     width: 5px;

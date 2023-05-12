@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import { Calendar } from "../pages/Calendar";
 import { CurrentSeason, History, News, Tools, NotFound } from "../pages";
 import { Layout } from "../Layout";
-import { DriversSeason } from "../pages/DriversSeason";
-import { TeamsSeason } from "../pages/TeamsSeason";
+import { DriversSeason } from "../components/current-season/DriversSeason";
+import { TeamsSeason } from "../components/current-season/TeamsSeason";
 
 export const router = createBrowserRouter([
   {

@@ -1,11 +1,9 @@
 import { NavLink } from "react-router-dom";
 import * as Unicons from "@iconscout/react-unicons";
 import { MenuButton } from "./MenuButton";
-import car from "../../assets/f1.png";
-import logo from "../../assets/logo.png";
+import logo from "@/assets/logo.png";
 import {
   BgMenu,
-  Car,
   LinksContainer,
   Logo,
   Menu,
@@ -13,7 +11,7 @@ import {
 } from "./NavBarStyle";
 import { useNavBar } from "./useNavBar";
 export const NavBar = ({ handleLoading }) => {
-  const { animate, clicked, handleLinkClick, toggleClicked } = useNavBar(handleLoading);
+  const { clicked, handleLinkClick, toggleClicked } = useNavBar(handleLoading);
   const styleIcon = {
     filter: " drop-shadow(1px 1px 1px #222)",
     marginRight: "0.5rem",
@@ -22,11 +20,11 @@ export const NavBar = ({ handleLoading }) => {
   const iconSize = "2rem";
   return (
     <NavBarContainer>
-      <Car src={car} className={animate ? "animate" : ""} />
       <Logo src={logo} alt="Logo" />
       <LinksContainer className={`${clicked ? "open-menu" : ""} `}>
         <NavLink onClick={handleLinkClick} className="link" to="/">
           <Unicons.UilCalender style={styleIcon} />
+
           <span className="text">Calendar</span>
         </NavLink>
         <NavLink

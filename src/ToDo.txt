@@ -1,1 +1,6 @@
-Primera sección calendar con un tiempo en reversa de la próxima carrera
+en CalendAR, PONER dos secciones como en current, carreras pasadas y las que vienen, teniendo el countdown timer siempre presente y funcionando
+Crear un countdown timer
+Usar la api de banderas
+Usar la api de twitter
+
+Al hacer click en un piloto o equipo se va a una página con toda la información del piloto o equipo, implementar las rutas /drivers/:driverId y /teams/:teamsId

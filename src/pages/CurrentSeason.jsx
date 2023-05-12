@@ -1,18 +1,25 @@
 import { NavLink, Outlet } from "react-router-dom";
 import styled from "styled-components";
+import { Modal } from "../components/modal-main/Modal";
+import { useLayoutApp } from "../Layout/useLayoutApp";
 
 export const CurrentSeason = () => {
+  const { isLoading, handleLoading, handleLoad } = useLayoutApp();
+
   return (
     <CurrentContainer>
       <BannerContainer>
-        <NavLink to="Drivers">
+        <NavLink to="Drivers" onClick={handleLoading}>
           <span>Drivers</span>
         </NavLink>
-        <NavLink to="Teams">
+        <NavLink to="Teams" onClick={handleLoading}>
           <span>Teams</span>
         </NavLink>
       </BannerContainer>
-      <Outlet />
+      <main onAnimationEnd={handleLoad}>
+        {isLoading && <Modal />}
+        <Outlet />
+      </main>
     </CurrentContainer>
   );
 };
