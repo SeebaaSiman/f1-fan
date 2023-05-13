@@ -32,6 +32,7 @@ const CardHeader = styled.div`
 const CardTitle = styled.h2`
   margin-left: auto;
   margin-right: auto;
+  visibility: ${({ open }) => (open ? "hidden" : "")};
 `;
 
 const CardArrow = styled.span`

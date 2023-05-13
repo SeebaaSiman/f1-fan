@@ -46,6 +46,7 @@ const CountContainer = styled.div`
   flex-direction: column;
   box-shadow: ${BoxStyle.boxShadow};
   h1 {
+    color: black;
     margin-left: auto;
     margin-right: auto;
   }

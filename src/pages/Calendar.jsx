@@ -6,9 +6,9 @@ import { PastRaces } from "../components/calendar-cards/PastRaces";
 export const Calendar = () => {
   return (
     <CalendarContainer>
-      <CountdownRace />
+      {/* <CountdownRace /> */}
       <h1>Siguientes carreras</h1>
-      <Upcoming />
+      {/* <Upcoming /> */}
       <h1>Carreras anteriores</h1>
       <PastRaces />
     </CalendarContainer>
@@ -23,6 +23,7 @@ const CalendarContainer = styled.div`
   flex-direction: column;
   align-items: center;
   h1 {
+    color: white;
     margin: 1rem;
   }
 `;

@@ -1,7 +1,6 @@
-import React from "react";
 import { useCalendar } from "../../hook/useCalendar";
 import { FixtureCard } from "./FixtureCard";
-import { InfoPastRace } from "./InfoPastRace";
+import { InfoPastRace2 } from "./InfoPastRace2";
 
 export const PastRaces = () => {
   const { pastRaces } = useCalendar();
@@ -17,7 +16,7 @@ export const PastRaces = () => {
           date={item.date}
           title={"More info..."}
         >
-          <InfoPastRace />
+          <InfoPastRace2 round={item.round} />
         </FixtureCard>
       ))}
     </>

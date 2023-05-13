@@ -4,6 +4,8 @@ import { CurrentSeason, History, News, Tools, NotFound } from "../pages";
 import { Layout } from "../Layout";
 import { DriversSeason } from "../components/current-season/DriversSeason";
 import { TeamsSeason } from "../components/current-season/TeamsSeason";
+import { Upcoming } from "../components/calendar-cards/Upcoming";
+import { PastRaces } from "../components/calendar-cards/PastRaces";
 
 export const router = createBrowserRouter([
   {

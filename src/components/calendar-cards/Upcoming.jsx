@@ -4,7 +4,6 @@ import { InfoUpcoming } from "./InfoUpcoming";
 
 export const Upcoming = () => {
   const { upcomingRaces } = useCalendar();
-
   return (
     <>
       {upcomingRaces?.map((item, index) => (
@@ -13,7 +12,7 @@ export const Upcoming = () => {
           title={item.raceName}
           round={item.round}
           date={`${item.FirstPractice.date} - ${item.date}`}
-          circuit={item.Circuit.circuitName}
+          circuit={item.Circuit.Location.locality}
           location={item.Circuit.Location.country}
         >
           <InfoUpcoming
