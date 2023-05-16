@@ -47,9 +47,15 @@ const InfoContainer = styled.div`
   justify-content: space-around;
 `;
 const LeftContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: end;
   width: 50%;
 `;
 const RightContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   width: 50%;
 `;
 const Info = styled.div`

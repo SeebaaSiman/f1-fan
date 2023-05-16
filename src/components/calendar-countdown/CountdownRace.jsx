@@ -1,36 +1,40 @@
 import styled from "styled-components";
 import { useCalendar } from "../../hook/useCalendar";
 import { BoxStyle } from "../../Layout/StylesGlobal";
-
+import { CountdownTimer } from "./CountdownTimer";
+import { InfoUpcoming } from "../calendar-cards/InfoUpcoming";
+import { AccordionCard } from "../calendar-cards/AccordionCard";
 export const CountdownRace = () => {
-  const arr = [
-    { text: "Días", value: 22 },
-    { text: "Horas", value: 22 },
-    { text: "Minutos", value: 22 },
-    { text: "Segundos", value: 22 },
-  ];
   const { nextRace } = useCalendar();
+  console.log(nextRace);
   return (
     <CountContainer>
       <h1>Fórmula 1 Calendar 2023</h1>
       {nextRace ? (
         <div>
           <FromContainer>
-            <span>Siguiente carrera:</span>
+            <span>Próxima carrera:</span>
             <h2>{nextRace.raceName}</h2>
-            <h4>{nextRace.Circuit.Location.country}</h4>
+            <h3>{nextRace.Circuit.Location.country}</h3>
           </FromContainer>
           <TimeContainer>
             <span>Comienza en:</span>
-            <CountdownContainer>
-              {arr.map((item, index) => (
-                <div key={index}>
-                  <span>{item.value}</span>
-                  <span>{item.text}</span>
-                </div>
-              ))}
-            </CountdownContainer>
+            <CountdownTimer
+              targetDate={new Date(`${nextRace.date}T${nextRace.time}`)}
+            />
           </TimeContainer>
+          <AccordionCard title={"More info..."}>
+            <InfoUpcoming
+              FirstPracticeDate={nextRace.FirstPractice.date}
+              FirstPracticeTime={nextRace.FirstPractice.time}
+              SecondPracticeDate={nextRace.SecondPractice.date}
+              SecondPracticeTime={nextRace.SecondPractice.time}
+              QualifyingDate={nextRace.Qualifying.date}
+              QualifyingTime={nextRace.Qualifying.time}
+              RaceDate={nextRace.date}
+              RaceTime={nextRace.time}
+            />
+          </AccordionCard>
         </div>
       ) : (
         <span>No hay carreras próximas.</span>
@@ -65,14 +69,13 @@ const FromContainer = styled.div`
     margin-left: auto;
     margin-right: auto;
   }
-  h4 {
+  h3 {
     margin: 1rem;
     margin-left: auto;
     margin-right: auto;
     font-size: 1.5rem;
   }
 `;
-const GranPrixContainer = styled.span``;
 const TimeContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -82,17 +85,3 @@ const TimeContainer = styled.div`
     margin-left: 1rem;
   }
 `;
-const CountdownContainer = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  div {
-    display: flex;
-    flex-direction: column;
-    margin: 0.5rem;
-    align-items: center;
-  }
-`;
-const Countdown = styled.div``;

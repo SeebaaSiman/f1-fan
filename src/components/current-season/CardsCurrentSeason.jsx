@@ -15,7 +15,8 @@ export const CardsCurrentSeason = ({
   position,
   wins,
   logo,
-  car_piloto,
+  car,
+  piloto,
   bg,
 }) => {
   return (
@@ -27,6 +28,7 @@ export const CardsCurrentSeason = ({
           <h2>{name}</h2>
           <h1>{surname}</h1>
         </HeaderContainer>
+
         <FooterContainer>
           <h1>{position}° position</h1>
           <h2>{points} points</h2>
@@ -35,7 +37,7 @@ export const CardsCurrentSeason = ({
       </LeftContainer>
 
       <RightContainer>
-        <img src={car_piloto} />
+        <img src={car || piloto} />
       </RightContainer>
     </CardContainer>
   );

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BoxStyle } from "../../Layout/StylesGlobal";
+import { BoxStyle, device } from "../../Layout/StylesGlobal";
 export const BgColor = {
   "Alfa Romeo": "linear-gradient(125deg, #8b0200 60%, #250100 100%)",
   AlphaTauri: "linear-gradient(125deg, #121f2b 60%, #080d13 100%)",
@@ -13,29 +13,39 @@ export const BgColor = {
   Williams: "linear-gradient(125deg, #ffffff 60%, #969696 100%)",
 };
 export const CardContainer = styled.div`
-  width: 90%;
+  width: 95%;
   margin: 1rem auto 1rem auto;
   border-radius: 20px;
   box-shadow: ${BoxStyle.boxShadow};
-
   background: ${(props) => props.BgColor[props.variant] || ""};
   display: flex;
   justify-content: space-around;
+  @media ${device.md} {
+    width: 44%;
+  }
+  @media ${device.xl} {
+    width: 32%;
+  }
 `;
 
 export const LeftContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 60%;
-`;
+  width:40%;
+
+  `;
 export const RightContainer = styled.div`
-  width: 50%;
+position: relative;
+  width: 60%;
   img {
-    margin-top: 1rem;
-    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    /* margin-top: 1rem; */
+    object-fit: contain;
     width: 100%;
-    filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.8));
+    height: 100%;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.8));
   }
 `;
 export const HeaderContainer = styled.div`
@@ -61,10 +71,9 @@ export const HeaderContainer = styled.div`
 `;
 export const Divider = styled.div`
   width: 10px;
-  background: inherit;
+  background: transparent;
   border-radius: 80px;
   box-shadow: ${BoxStyle.boxShadow};
-
   margin: 0 5px 0 5px;
 `;
 export const MainContainer = styled.div`

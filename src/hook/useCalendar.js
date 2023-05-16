@@ -12,9 +12,10 @@ export const useCalendar = () => {
  };
 
  const restRaces = races?.filter((race) => isRaceUpcoming(race.date));
+
+ const nextRace = restRaces?.[0];
  const upcomingRaces = restRaces?.slice(1)
  const pastRaces = races?.filter((race) => !isRaceUpcoming(race.date));
- const nextRace = restRaces?.[0];
 
  // output: Fri May 20 2022 00:00:00 GMT-0400 (Eastern Daylight Time)
  const convertDate = (dateString) => {

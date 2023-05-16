@@ -2,6 +2,7 @@ import { CardsCurrentSeason } from "./CardsCurrentSeason";
 import { API_BASE_URL, CURRENTyear } from "../../hook/api";
 import useAxios from "../../hook/useAxios";
 import { Logo, TeamCar } from "./dataImage";
+import styled from "styled-components";
 
 export const TeamsSeason = () => {
   const { data } = useAxios(
@@ -11,7 +12,7 @@ export const TeamsSeason = () => {
     data?.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
 
   return (
-    <>
+    <Container>
       {depur?.map((c, index) => (
         <CardsCurrentSeason
           key={index}
@@ -28,9 +29,13 @@ export const TeamsSeason = () => {
           wins={c.wins}
           bg={c.Constructor.name}
           logo={Logo[c.Constructor.name || ""]}
-          car_piloto={TeamCar[c.Constructor.name] || ""}
+          car={TeamCar[c.Constructor.name] || ""}
         />
       ))}
-    </>
+    </Container>
   );
 };
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;

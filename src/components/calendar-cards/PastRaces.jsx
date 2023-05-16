@@ -1,10 +1,9 @@
 import { useCalendar } from "../../hook/useCalendar";
 import { FixtureCard } from "./FixtureCard";
-import { InfoPastRace2 } from "./InfoPastRace2";
+import { InfoPastRace } from "./InfoPastRace";
 
 export const PastRaces = () => {
   const { pastRaces } = useCalendar();
-  // console.log(pastRaces);
   return (
     <>
       {pastRaces?.map((item, index) => (
@@ -16,7 +15,7 @@ export const PastRaces = () => {
           date={item.date}
           title={"More info..."}
         >
-          <InfoPastRace2 round={item.round} />
+          <InfoPastRace round={item.round} />
         </FixtureCard>
       ))}
     </>

@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import { CountdownRace } from "../components/calendar-cards/CountdownRace";
 import { Upcoming } from "../components/calendar-cards/Upcoming";
 import { PastRaces } from "../components/calendar-cards/PastRaces";
+import { CountdownRace } from "../components/calendar-countdown/CountdownRace";
 
 export const Calendar = () => {
   return (
     <CalendarContainer>
-      {/* <CountdownRace /> */}
-      <h1>Siguientes carreras</h1>
-      {/* <Upcoming /> */}
-      <h1>Carreras anteriores</h1>
+      <CountdownRace />
+      <Title>Siguientes carreras</Title>
+      <Upcoming />
+      <Title>Carreras anteriores</Title>
       <PastRaces />
     </CalendarContainer>
   );
@@ -22,8 +22,8 @@ const CalendarContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  h1 {
-    color: white;
-    margin: 1rem;
-  }
+`;
+const Title = styled.h1`
+  color: white;
+  margin: 1rem;
 `;
