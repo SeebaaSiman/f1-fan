@@ -23,7 +23,6 @@ export const TeamsSeason = () => {
               ? "Haas"
               : c.Constructor.name
           }
-          // surname={c.Constructor.name}
           points={c.points}
           position={c.position}
           wins={c.wins}

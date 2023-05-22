@@ -1,12 +1,12 @@
-import { useCalendar } from "../../hook/useCalendar";
-import { FixtureCard } from "./FixtureCard";
+import { useCalendar } from "../../../hook/useCalendar";
+import { FixtureCard } from "../FixtureCard";
 import { InfoPastRace } from "./InfoPastRace";
 
 export const PastRaces = () => {
   const { pastRaces } = useCalendar();
   return (
     <>
-      {pastRaces?.map((item, index) => (
+      {pastRaces?.reverse().map((item, index) => (
         <FixtureCard
           key={index}
           circuit={item.raceName}

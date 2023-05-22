@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Upcoming } from "../components/calendar-cards/Upcoming";
-import { PastRaces } from "../components/calendar-cards/PastRaces";
+import { Upcoming } from "../components/calendar-cards/next-races/Upcoming";
+import { PastRaces } from "../components/calendar-cards/results-races/PastRaces";
 import { CountdownRace } from "../components/calendar-countdown/CountdownRace";
 
 export const Calendar = () => {

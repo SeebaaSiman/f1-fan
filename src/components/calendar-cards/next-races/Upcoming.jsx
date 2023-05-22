@@ -1,5 +1,5 @@
-import { useCalendar } from "../../hook/useCalendar";
-import { FixtureCard } from "./FixtureCard";
+import { useCalendar } from "../../../hook/useCalendar";
+import { FixtureCard } from "../FixtureCard";
 import { InfoUpcoming } from "./InfoUpcoming";
 
 export const Upcoming = () => {

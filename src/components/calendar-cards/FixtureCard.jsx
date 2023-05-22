@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { AccordionCard } from "./AccordionCard";
 import { useCalendar } from "../../hook/useCalendar";
 import { BoxStyle } from "../../Layout/StylesGlobal";
+import { FlagCountry } from "../../hook/FlagCountry";
 export const FixtureCard = ({
   circuit,
   round,
@@ -15,7 +16,7 @@ export const FixtureCard = ({
   return (
     <NextContainer>
       <HeaderContainer>
-        <h3>{location}</h3>
+        <FlagCountry countryName={location} />
         <h2>{circuit}</h2>
         <h4>round {round}</h4>
       </HeaderContainer>

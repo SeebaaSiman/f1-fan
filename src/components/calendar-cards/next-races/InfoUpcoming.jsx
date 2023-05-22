@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useCalendar } from "../../hook/useCalendar";
+import { useCalendar } from "../../../hook/useCalendar";
 
 export const InfoUpcoming = ({
   FirstPracticeDate,

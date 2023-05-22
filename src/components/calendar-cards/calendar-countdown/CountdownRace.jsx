@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { useCalendar } from "../../hook/useCalendar";
 import { BoxStyle } from "../../Layout/StylesGlobal";
 import { CountdownTimer } from "./CountdownTimer";
-import { InfoUpcoming } from "../calendar-cards/InfoUpcoming";
+import { InfoUpcoming } from "../calendar-cards/next-races/InfoUpcoming";
 import { AccordionCard } from "../calendar-cards/AccordionCard";
+import { FlagCountry } from "../../hook/FlagCountry";
 export const CountdownRace = () => {
   const { nextRace } = useCalendar();
-  console.log(nextRace);
   return (
     <CountContainer>
       <h1>Fórmula 1 Calendar 2023</h1>
@@ -15,7 +15,10 @@ export const CountdownRace = () => {
           <FromContainer>
             <span>Próxima carrera:</span>
             <h2>{nextRace.raceName}</h2>
-            <h3>{nextRace.Circuit.Location.country}</h3>
+            <FlagCountry
+              countryName={nextRace.Circuit.Location.country}
+              size={50}
+            />
           </FromContainer>
           <TimeContainer>
             <span>Comienza en:</span>
@@ -63,17 +66,12 @@ const FromContainer = styled.div`
   border-right: 4px solid black;
   border-bottom: 4px solid black;
   font-size: 1.5rem;
+
   h2 {
     margin-top: 1rem;
     font-size: 3rem;
     margin-left: auto;
     margin-right: auto;
-  }
-  h3 {
-    margin: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.5rem;
   }
 `;
 const TimeContainer = styled.div`
@@ -81,6 +79,7 @@ const TimeContainer = styled.div`
   flex-direction: column;
   /* margin: 2rem; */
   font-size: 1.5rem;
+
   span {
     margin-left: 1rem;
   }

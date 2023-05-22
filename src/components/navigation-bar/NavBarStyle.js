@@ -66,7 +66,10 @@ export const LinksContainer = styled.div`
     .link {
       font-size: 2.5rem;
       color: #222;
-      margin-top: 2rem;
+      margin-top: 3rem;
+      &:hover{
+        color:red;
+      }
     }
   }
   //! Desktop

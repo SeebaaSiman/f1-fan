@@ -29,8 +29,7 @@ const CountdownContainer = styled.div`
   div {
     display: flex;
     flex-direction: column;
-    margin: 0.5rem;
+    margin: 1rem;
     align-items: center;
   }
 `;
-const Countdown = styled.div``;

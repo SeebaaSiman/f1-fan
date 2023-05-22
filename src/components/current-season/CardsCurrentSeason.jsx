@@ -4,8 +4,8 @@ import {
   Divider,
   FooterContainer,
   HeaderContainer,
-  LeftContainer,
-  RightContainer,
+  // LeftContainer,
+  // RightContainer,
 } from "./CardStyle";
 
 export const CardsCurrentSeason = ({
@@ -21,24 +21,23 @@ export const CardsCurrentSeason = ({
 }) => {
   return (
     <CardContainer variant={bg} BgColor={BgColor}>
-      <LeftContainer>
-        <HeaderContainer>
-          <img src={logo} />
-          <Divider variant={bg} BgColor={BgColor} />
-          <h2>{name}</h2>
-          <h1>{surname}</h1>
-        </HeaderContainer>
-
-        <FooterContainer>
-          <h1>{position}° position</h1>
-          <h2>{points} points</h2>
-          {wins > 0 ? <h3>Wins: {wins}</h3> : null}
-        </FooterContainer>
-      </LeftContainer>
-
-      <RightContainer>
-        <img src={car || piloto} />
-      </RightContainer>
+      <HeaderContainer>
+        <img src={logo} />
+        <Divider variant={bg} BgColor={BgColor} />
+        <h2>{name}</h2>
+        <h1>{surname}</h1>
+      </HeaderContainer>
+      <FooterContainer variant={car ? "car" : "piloto"}>
+        <h1>{position}° position</h1>
+        <h2>
+          {points} points {wins > 0 ? <span>{`(${wins} wins)`}</span> : null}
+        </h2>
+        {car ? (
+          <img src={car} variant={"car"} />
+        ) : (
+          <img src={piloto} variant={"piloto"} />
+        )}
+      </FooterContainer>
     </CardContainer>
   );
 };

@@ -15,12 +15,12 @@ export const BoxStyle = {
 };
 
 export const StylesGlobal = createGlobalStyle`
-  /* *{
+  *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     /* font-family: 'Inconsolata', monospace; */
-/* } */
+  }
 *,*::before,*::after{
     margin: 0;
     padding: 0;

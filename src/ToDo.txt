@@ -1,4 +1,3 @@
-Crear un countdown timer
 Usar la api de banderas
 Usar la api de twitter
 
