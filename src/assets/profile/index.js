@@ -1,0 +1,10 @@
+export { default as alfaRomeoCar } from "./alfaromeo.jpg";
+export { default as alphaTauriCar } from "./alphatauri.jpg";
+export { default as alpineCar } from "./alpine.jpg";
+export { default as astonMartinCar } from "./astonmartin.jpg";
+export { default as ferrariCar } from "./ferrari.jpg";
+export { default as haasCar } from "./haas.jpg";
+export { default as mclarenCar } from "./mclaren.jpg";
+export { default as mercedesCar } from "./mercedes.jpg";
+export { default as redBullCar } from "./redbull.jpg";
+export { default as williamsCar } from "./williams.jpg";

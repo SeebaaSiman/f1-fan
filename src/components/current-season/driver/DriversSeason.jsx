@@ -1,19 +1,19 @@
-import { API_BASE_URL, CURRENTyear } from "../../hook/api";
-import { CardsCurrentSeason } from "./CardsCurrentSeason";
-import { Logo, driversCurrent } from "./dataImage";
-import useAxios from "../../hook/useAxios";
 import styled from "styled-components";
-
+import { useAxios, API_BASE_URL, CURRENTyear } from "@/hook";
+import { CardsCurrentSeason } from "../CardsCurrentSeason";
+import { Logo, driversCurrent } from "../dataImage";
 export const DriversSeason = () => {
   const { data } = useAxios(
     `${API_BASE_URL}${CURRENTyear}/driverStandings.json`
   );
   const depur = data?.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+
   return (
     <Container>
       {depur?.map((c, index) => (
         <CardsCurrentSeason
           key={index}
+          id={c.Driver.driverId}
           name={c.Driver.givenName}
           surname={c.Driver.familyName}
           points={c.points}

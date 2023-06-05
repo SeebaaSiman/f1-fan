@@ -9,7 +9,6 @@ export const Search = () => {
   const toggleOpen = () => setIsOpen(!isOpen);
   const handleConfirmIconClick = () => {
     // Aquí puedes hacer algo con el valor ingresado en el input, por ejemplo, realizar una búsqueda
-    console.log(searchValue);
   };
   const handleInputChange = (event) => {
     setSearchValue(event.target.value);

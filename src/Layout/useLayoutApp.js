@@ -1,9 +1,9 @@
 import { useState } from "react";
 export const useLayoutApp = () => {
- 
- const [isLoading, setIsLoading] = useState(false);
- const handleLoading = () => setIsLoading(true);
- const handleLoad = () => setIsLoading(false);
 
- return { isLoading, handleLoading, handleLoad }
+ const [isLoading, setIsLoading] = useState(false);
+ const onLoading = () => setIsLoading(true);
+ const onLoad = () => setIsLoading(false);
+
+ return { isLoading, onLoading, onLoad }
 }

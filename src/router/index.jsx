@@ -1,9 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Calendar } from "../pages/Calendar";
-import { CurrentSeason, History, News, NotFound } from "../pages";
+import { Calendar, CurrentSeason, History, News, NotFound } from "@/pages";
 import { Layout } from "../Layout";
-import { DriversSeason } from "../components/current-season/DriversSeason";
-import { TeamsSeason } from "../components/current-season/TeamsSeason";
+import { DriversSeason, TeamsSeason, ProfileId } from "@/components";
 
 export const router = createBrowserRouter([
   {
@@ -20,8 +18,9 @@ export const router = createBrowserRouter([
         element: <CurrentSeason />,
         children: [
           { path: "Drivers", element: <DriversSeason /> },
-          { path: "Drivers", element: <DriversSeason /> },
+          { path: "Drivers/:id", element: <ProfileId type="drivers" /> },
           { path: "Teams", element: <TeamsSeason /> },
+          { path: "Teams/:id", element: <ProfileId type="teams" /> },
         ],
       },
       { path: "News", element: <News /> },
@@ -33,3 +32,13 @@ export const router = createBrowserRouter([
 //Rutas anidadas en children, todas responden al error NotFound y van a ser renderizadas esas rutas dentro de outled en layout
 // https://www.youtube.com/watch?v=byW9ULUScHI
 // Ver params para según el id por ejemplo cambiar la ruta al hacer click por ejemplo driver/:id
+
+// Usar así el lazy ??
+// const Landing = lazy(() => import('../components/Layout/Landing'));
+// const Races = lazy(() => import('../features/races/components/Races'));
+// const Standings = lazy(() => import('../features/rankings/components/Standings'));
+// const Teams = lazy(() => import('../features/teams/components/Teams'));
+// const TeamDetail = lazy(() => import('../features/teams/components/TeamDetail'));
+// const DriverDetail = lazy(() => import('../features/drivers/components/DriverDetail'));
+// const Drivers = lazy(() => import('../features/drivers/components/Drivers'));
+// const RaceResult = lazy(() => import('../features/races/components/RaceResult'));

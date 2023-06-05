@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-export const useNavBar = (handleLoading) => {
+export const useNavBar = (onLoading) => {
  const [clicked, setClicked] = useState(false);
 
  const toggleClicked = () => setClicked(!clicked);
 
  const handleLinkClick = () => {
-  handleLoading()
+  onLoading()
   if (window.innerWidth < 768 && clicked) {
    setClicked(false);
   }

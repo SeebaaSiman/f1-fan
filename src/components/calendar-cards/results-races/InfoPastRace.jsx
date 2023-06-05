@@ -1,5 +1,5 @@
-import { API_BASE_URL, CURRENTyear } from "../../../hook/api";
-import useAxios from "../../../hook/useAxios";
+import { API_BASE_URL, CURRENTyear } from "../../../hook/helpers";
+import { useAxios } from "@/hook/useAxios";
 import { BgColor } from "../../current-season/CardStyle";
 import { driversHelmet } from "../../current-season/dataImage";
 import { HeaderPastRace } from "./HeaderPastRace";

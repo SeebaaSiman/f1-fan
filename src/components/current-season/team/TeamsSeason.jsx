@@ -1,8 +1,7 @@
-import { CardsCurrentSeason } from "./CardsCurrentSeason";
-import { API_BASE_URL, CURRENTyear } from "../../hook/api";
-import useAxios from "../../hook/useAxios";
-import { Logo, TeamCar } from "./dataImage";
 import styled from "styled-components";
+import { CardsCurrentSeason } from "../CardsCurrentSeason";
+import { Logo, TeamCar } from "../dataImage";
+import { useAxios, API_BASE_URL, CURRENTyear } from "@/hook";
 
 export const TeamsSeason = () => {
   const { data } = useAxios(
@@ -27,7 +26,7 @@ export const TeamsSeason = () => {
           position={c.position}
           wins={c.wins}
           bg={c.Constructor.name}
-          logo={Logo[c.Constructor.name || ""]}
+          logo={Logo[c.Constructor.name] || ""}
           car={TeamCar[c.Constructor.name] || ""}
         />
       ))}

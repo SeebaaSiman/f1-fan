@@ -1,10 +1,7 @@
 import styled from "styled-components";
-import { useCalendar } from "../../hook/useCalendar";
-import { BoxStyle } from "../../Layout/StylesGlobal";
-import { CountdownTimer } from "./CountdownTimer";
-import { InfoUpcoming } from "../calendar-cards/next-races/InfoUpcoming";
-import { AccordionCard } from "../calendar-cards/AccordionCard";
-import { FlagCountry } from "../../hook/FlagCountry";
+import { BoxStyle } from "@/Layout/StylesGlobal";
+import { CountdownTimer,InfoUpcoming ,AccordionCard} from "@/components";
+import { FlagCountry,useCalendar } from "@/hook";
 export const CountdownRace = () => {
   const { nextRace } = useCalendar();
   return (

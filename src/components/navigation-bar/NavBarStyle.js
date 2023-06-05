@@ -1,8 +1,8 @@
 import { BoxStyle, device } from "../../Layout/StylesGlobal";
 import styled, { keyframes } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const NavBarContainer = styled.nav`
-  /* position: relative; */
   width: 100%;
   height: 5rem;
   background-color: red;
@@ -10,7 +10,6 @@ export const NavBarContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 `;
 
 export const Logo = styled.img`
@@ -72,6 +71,7 @@ export const LinksContainer = styled.div`
       }
     }
   }
+
   //! Desktop
   @media ${device.md} {
     position: initial;
@@ -90,7 +90,7 @@ export const LinksContainer = styled.div`
       animation: ${show} 1s ease-in-out;
     }
   }
-`;
+  `;
 
 //! mobile
 export const Menu = styled.div`

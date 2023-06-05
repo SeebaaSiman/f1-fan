@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+
 import { BoxStyle, device } from "../../Layout/StylesGlobal";
 export const BgColor = {
   "Alfa Romeo": "linear-gradient(125deg, #8b0200 60%, #250100 100%)",
@@ -31,7 +33,9 @@ export const CardContainer = styled.div`
 
   }
 `;
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled(NavLink)`
+    text-decoration: none;
+color:black;
   padding: 1rem;
   display: flex;
   img {

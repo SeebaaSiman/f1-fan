@@ -1,19 +1,20 @@
-import * as C from '@/assets/car';
+import * as TC from '@/assets/car';
 import * as P from '@/assets/pilotos';
 import * as H from '@/assets/helmet';
 import * as L from '@/assets/escuderias';
+import * as PC from '@/assets/profile';
 
 export const TeamCar = {
- "Alfa Romeo": C.alfaRomeoCar,
- "AlphaTauri": C.alphaTauriCar,
- "Alpine F1 Team": C.alpineCar,
- "Aston Martin": C.astonMartinCar,
- "Ferrari": C.ferrariCar,
- "Haas F1 Team": C.haasCar,
- "McLaren": C.mclarenCar,
- "Mercedes": C.mercedesCar,
- "Red Bull": C.redBullCar,
- "Williams": C.williamsCar,
+ "Alfa Romeo": TC.alfaRomeoCar,
+ "AlphaTauri": TC.alphaTauriCar,
+ "Alpine F1 Team": TC.alpineCar,
+ "Aston Martin": TC.astonMartinCar,
+ "Ferrari": TC.ferrariCar,
+ "Haas F1 Team": TC.haasCar,
+ "McLaren": TC.mclarenCar,
+ "Mercedes": TC.mercedesCar,
+ "Red Bull": TC.redBullCar,
+ "Williams": TC.williamsCar,
 };
 export const Logo = {
  "Alfa Romeo": L.alfaRomeoLogo,
@@ -26,6 +27,18 @@ export const Logo = {
  "Mercedes": L.mercedesLogo,
  "Red Bull": L.redBullLogo,
  "Williams": L.williamsLogo,
+};
+export const ProfileCar = {
+ "Alfa Romeo": PC.alfaRomeoCar,
+ "AlphaTauri": PC.alphaTauriCar,
+ "Alpine F1 Team": PC.alpineCar,
+ "Aston Martin": PC.astonMartinCar,
+ "Ferrari": PC.ferrariCar,
+ "Haas F1 Team": PC.haasCar,
+ "McLaren": PC.mclarenCar,
+ "Mercedes": PC.mercedesCar,
+ "Red Bull": PC.redBullCar,
+ "Williams": PC.williamsCar,
 };
 
 export const driversCurrent = {

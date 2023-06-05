@@ -22,6 +22,7 @@ export const MenuButton = ({ toggleClicked, clicked }) => {
 };
 
 const Button = styled.div`
+
   .nav-icon-1 {
     width: 30px;
     height: 30px;

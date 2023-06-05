@@ -4,9 +4,8 @@ import {
   Divider,
   FooterContainer,
   HeaderContainer,
-  // LeftContainer,
-  // RightContainer,
-} from "./CardStyle";
+  Podium,
+} from "./";
 
 export const CardsCurrentSeason = ({
   name,
@@ -18,17 +17,22 @@ export const CardsCurrentSeason = ({
   car,
   piloto,
   bg,
+  id,
 }) => {
   return (
     <CardContainer variant={bg} BgColor={BgColor}>
-      <HeaderContainer>
+      <HeaderContainer
+        to={
+          car ? `/Current-Season/Teams/${id}` : `/Current-Season/Drivers/${id}`
+        }
+      >
         <img src={logo} />
-        <Divider variant={bg} BgColor={BgColor} />
+        <Divider />
         <h2>{name}</h2>
         <h1>{surname}</h1>
       </HeaderContainer>
       <FooterContainer variant={car ? "car" : "piloto"}>
-        <h1>{position}° position</h1>
+        <Podium position={position} />
         <h2>
           {points} points {wins > 0 ? <span>{`(${wins} wins)`}</span> : null}
         </h2>

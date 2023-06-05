@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import useAxios from "./useAxios";
+import {useAxios} from "./useAxios";
 import { BoxStyle } from "../Layout/StylesGlobal";
 
 export const FlagCountry = ({ countryName, size = "30", heading = 3 }) => {
   const { data } = useAxios(`https://flagcdn.com/en/codes.json`);
   const countryCodes = data;
-  console.log(countryCodes);
   const HeadingTag = `h${heading}`;
   function getCountryCode(countryName) {
     // Busca el código del país en el objeto countryCodes

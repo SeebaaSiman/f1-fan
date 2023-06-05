@@ -11,20 +11,19 @@ import {
 } from "./NavBarStyle";
 import { useNavBar } from "./useNavBar";
 
-export const NavBar = ({ handleLoading }) => {
-  const { clicked, handleLinkClick, toggleClicked } = useNavBar(handleLoading);
+export const NavBar = ({ onLoading }) => {
+  const { clicked, handleLinkClick, toggleClicked } = useNavBar(onLoading);
   const styleIcon = {
     filter: " drop-shadow(1px 1px 1px #222)",
     marginRight: "0.5rem",
     height: "100%",
   };
-  const iconSize = "2rem";
+  // const iconSize = "2rem";
   return (
     <NavBarContainer>
       <Logo src={logo} alt="Logo" />
 
       <LinksContainer className={`${clicked ? "open-menu" : ""} `}>
-
         <NavLink onClick={handleLinkClick} className="link" to="/">
           <Unicons.UilCalender style={styleIcon} />
           <span className="text">Calendar</span>

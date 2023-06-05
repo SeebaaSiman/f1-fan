@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import { Upcoming } from "../components/calendar-cards/next-races/Upcoming";
-import { PastRaces } from "../components/calendar-cards/results-races/PastRaces";
-import { CountdownRace } from "../components/calendar-countdown/CountdownRace";
+import { Upcoming, PastRaces, CountdownRace } from "../components";
 
 export const Calendar = () => {
   return (

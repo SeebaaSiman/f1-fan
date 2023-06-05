@@ -1,26 +1,26 @@
-import { NavLink, Outlet, useNavigation } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import styled from "styled-components";
-import { Modal } from "../components/modal-main/Modal";
-import { useLayoutApp } from "../Layout/useLayoutApp";
+import * as Unicons from "@iconscout/react-unicons";
+import { Modal } from "@/components";
+import { useLayoutApp } from "@/Layout/useLayoutApp";
 
 export const CurrentSeason = () => {
-  const { isLoading, handleLoading, handleLoad } = useLayoutApp();
-  const Navigation = useNavigation();
-  console.log(Navigation);
+  const { isLoading, onLoading, onLoad } = useLayoutApp();
   return (
     <CurrentContainer>
       <BannerContainer>
-        <StyledNavLink to="Drivers" onClick={handleLoading}>
+        <StyledNavLink to="Drivers" onClick={onLoading}>
+          <IconDriver size="2.8rem" />
           <span>Drivers</span>
         </StyledNavLink>
-
-        <StyledNavLink to="Teams" onClick={handleLoading}>
+        <StyledNavLink to="Teams" onClick={onLoading}>
+          <IconTeams size="2.8rem" />
           <span>Teams</span>
         </StyledNavLink>
       </BannerContainer>
-      <main onAnimationEnd={handleLoad}>
-        {isLoading && <Modal />}
-        {Navigation.state === "loading" ? <Loader /> : <Outlet />}
+      <main onAnimationEnd={onLoad}>
+        <Modal isLoading={isLoading} />
+        <Outlet />
       </main>
     </CurrentContainer>
   );
@@ -39,6 +39,8 @@ const BannerContainer = styled.div`
 const StyledNavLink = styled(NavLink)`
   color: #000;
   text-decoration: none;
+  display: flex;
+  align-items: center;
   span {
     font-size: 2.5rem;
     color: #7e7e7e;
@@ -48,6 +50,28 @@ const StyledNavLink = styled(NavLink)`
     }
   }
   &.active span {
+    color: red;
+  }
+`;
+const IconDriver = styled(Unicons.UilStreering)`
+  color: #7e7e7e;
+  font-size: 3rem;
+  transition: color 0.3s;
+  ${StyledNavLink}:hover & {
+    color: white;
+  }
+  ${StyledNavLink}.active & {
+    color: red;
+  }
+`;
+const IconTeams = styled(Unicons.UilPump)`
+  color: #7e7e7e;
+  font-size: 3rem;
+  transition: color 0.3s;
+  ${StyledNavLink}:hover & {
+    color: white;
+  }
+  ${StyledNavLink}.active & {
     color: red;
   }
 `;
