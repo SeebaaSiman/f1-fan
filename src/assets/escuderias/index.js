@@ -1,4 +1,4 @@
-export { default as alfaRomeoLogo } from "./Alfa-romeo.png";
+export { default as alfaRomeoLogo } from "./alfa-romeo.png";
 export { default as alphaTauriLogo } from "./alpha-tauri.png";
 export { default as alpineLogo } from "./alpine.png";
 export { default as astonMartinLogo } from "./aston-martin.png";
