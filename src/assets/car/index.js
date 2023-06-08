@@ -1,4 +1,4 @@
-export { default as alfaRomeoCar } from "./Alfa-romeo.png";
+export { default as alfaRomeoCar } from "./alfa-romeo.png";
 export { default as alphaTauriCar } from "./alpha-tauri.png";
 export { default as alpineCar } from "./alpine.png";
 export { default as astonMartinCar } from "./aston-martin.png";
