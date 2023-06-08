@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { TwitterTimeLine, getButtonText, options } from "@/components";
+import { getButtonText, options } from "../components/newsData";
+import { TwitterTimeLine } from "../components/TwitterTimeLine";
+// import { TwitterTimeLine, getButtonText, options } from "@/components";
 
 export const News = () => {
   const [selectedOptions, setSelectedOptions] = useState([]);

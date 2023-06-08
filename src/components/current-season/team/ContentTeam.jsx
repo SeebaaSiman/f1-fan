@@ -5,7 +5,6 @@ export const ContentTeam = ({ id }) => {
     `${API_BASE_URL}constructors/ferrari.json`
   );
 
-  console.log(data1);
   return (
     <div>
       <div>las dos imágenes de los pilotos</div>

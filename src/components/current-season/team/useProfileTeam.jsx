@@ -10,7 +10,6 @@ export const useProfileTeam = (id) => {
     `${API_BASE_URL}drivers/${id}/driverStandings.json`
   );
   const depur = data1?.MRData.StandingsTable.StandingsLists;
-  console.log(data1);
   const [constructorsName, setConstructorsName] = useState([]);
 
   useEffect(() => {
