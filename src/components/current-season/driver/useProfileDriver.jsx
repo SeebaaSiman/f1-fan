@@ -8,7 +8,7 @@ export const useProfileDriver = (id) => {
   );
   const depur = data1?.MRData.StandingsTable.StandingsLists;
   const { data: data2 } = useAxios(
-    `https://ergast.com/api/f1/current/drivers/${id}/driverStandings.json`
+    `${API_BASE_URL}current/drivers/${id}/driverStandings.json`
   );
   const depur2 =
     data2?.MRData.StandingsTable.StandingsLists[0].DriverStandings[0];

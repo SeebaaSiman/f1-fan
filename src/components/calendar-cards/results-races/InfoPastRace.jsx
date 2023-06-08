@@ -1,15 +1,16 @@
-import { API_BASE_URL, CURRENTyear } from "../../../hook/helpers";
+import { API_BASE_URL, CURRENTyear } from "@/hook/helpers";
 import { useAxios } from "@/hook/useAxios";
-import { BgColor } from "../../current-season/CardStyle";
-import { driversHelmet } from "../../current-season/dataImage";
-import { HeaderPastRace } from "./HeaderPastRace";
 import {
+  BgColor,
+  driversHelmet,
+  HeaderPastRace,
   Desktop,
   HelmetContainer,
   Mobile,
   PastRaceContainer,
   Tablet,
-} from "./pastRaceStyle";
+} from "@/components";
+import { useMemo } from "react";
 
 export const InfoPastRace = ({ round }) => {
   const { data } = useAxios(
