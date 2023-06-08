@@ -30,7 +30,13 @@ export const ContentDriver = ({
       <HeaderContainer>
         <h2>Team's history</h2>
         {constructors?.map((item, index) => (
-          <h3 key={index}>{item}</h3>
+          <h3 key={index}>
+            {item === "Alpine F1 Team"
+              ? "Alpine"
+              : item === "Haas F1 Team"
+              ? "Haas"
+              : item}
+          </h3>
         ))}
       </HeaderContainer>
       <HeaderContainer>

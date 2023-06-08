@@ -3,7 +3,11 @@ import {useAxios} from "./useAxios";
 import { BoxStyle } from "../Layout/StylesGlobal";
 
 export const FlagCountry = ({ countryName, size = "30", heading = 3 }) => {
-  const { data } = useAxios(`https://flagcdn.com/en/codes.json`);
+  const { data ,error} = useAxios(`https://flagcdn.com/en/codes.json`);
+  if (error) {
+    console.error("Failed to get data from API:", error);
+  }
+
   const countryCodes = data;
   const HeadingTag = `h${heading}`;
   function getCountryCode(countryName) {
@@ -24,6 +28,7 @@ export const FlagCountry = ({ countryName, size = "30", heading = 3 }) => {
 
   return (
     <FlagContainer>
+
       <img
         src={`https://flagcdn.com/${getCountryCode(countryName)}.svg`}
         width={size}

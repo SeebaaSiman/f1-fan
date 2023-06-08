@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { TwitterTimeLine } from "../components/TwitterTimeLine";
 import { useState } from "react";
-import { getButtonText, options } from "../components/newsData";
+import { TwitterTimeLine, getButtonText, options } from "@/components";
 
 export const News = () => {
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -37,7 +36,6 @@ export const News = () => {
     </>
   );
 };
-const ContainerNews = styled.div``;
 const ContainerTwitt = styled.div`
   width: 100%;
   display: flex;
