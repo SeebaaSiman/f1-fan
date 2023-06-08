@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
+import styled from "styled-components";
 
 export const TwitterTimeLine = ({ screenName, tweetLimit }) => {
   return (
