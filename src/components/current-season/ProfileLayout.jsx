@@ -59,7 +59,7 @@ export const ProfileLayout = ({ id, type }) => {
             championsWorlds={championsWorlds}
           />
         ) : (
-          <ContentTeam id={id} />
+          <ContentTeam   constructors={constructorsName}/>
         )}
       </Wrapper>
     </ProfileContainer>
