@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import useDeviceType from "../../../hook/useDeviceType";
 
 export const ShowCounter = ({ days, hours, minutes, seconds }) => {
   const arr = [
@@ -7,8 +8,9 @@ export const ShowCounter = ({ days, hours, minutes, seconds }) => {
     { text: "Minutos", value: minutes },
     { text: "Segundos", value: seconds },
   ];
+  const deviceType = useDeviceType();
   return (
-    <CountdownContainer>
+    <CountdownContainer deviceType={deviceType}>
       {arr.map((item, index) =>
         item.text === "Días" && item.value === 0 ? null : (
           <div key={index}>
@@ -24,12 +26,14 @@ const CountdownContainer = styled.div`
   margin-top: 1rem;
   margin-bottom: 1rem;
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
+  flex-wrap: wrap;
+  justify-content: center;
   div {
     display: flex;
     flex-direction: column;
     margin: 1rem;
+    justify-content: center;
     align-items: center;
+    width: ${(props) => (props.deviceType === "desktop" ? "" : "40%")};
   }
 `;

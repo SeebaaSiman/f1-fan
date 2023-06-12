@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useCalendar } from "../../../hook/useCalendar";
+import { device } from "../../../Layout/StylesGlobal";
 
 export const InfoUpcoming = ({
   FirstPracticeDate,
@@ -14,49 +15,34 @@ export const InfoUpcoming = ({
   const { getShortDayOfWeek, convertTimeZone } = useCalendar();
   return (
     <InfoContainer>
-      <LeftContainer>
-        <Info>
-          <h3>Practice 1</h3>
-          <span>{getShortDayOfWeek(FirstPracticeDate)}</span>
-          <div>{`${convertTimeZone(FirstPracticeTime)} hs`}</div>
-        </Info>
-        <Info>
-          <h3>Practice 2</h3>
-          <span>{getShortDayOfWeek(SecondPracticeDate)}</span>
-          <div>{`${convertTimeZone(SecondPracticeTime)} hs`}</div>
-        </Info>
-      </LeftContainer>
-      <RightContainer>
-        <Info>
-          <h3>Qualifing</h3>
-          <span>{getShortDayOfWeek(QualifyingDate)}</span>
-          <div>{`${convertTimeZone(QualifyingTime)} hs`}</div>
-        </Info>
-        <Info>
-          <h3>Race</h3>
-          <span>{getShortDayOfWeek(RaceDate)}</span>
-          <div>{`${convertTimeZone(RaceTime)} hs`}</div>
-        </Info>
-      </RightContainer>
+      <Info>
+        <h3>Practice 1</h3>
+        <span>{getShortDayOfWeek(FirstPracticeDate)}</span>
+        <div>{`${convertTimeZone(FirstPracticeTime)} hs`}</div>
+      </Info>
+      <Info>
+        <h3>Practice 2</h3>
+        <span>{getShortDayOfWeek(SecondPracticeDate)}</span>
+        <div>{`${convertTimeZone(SecondPracticeTime)} hs`}</div>
+      </Info>
+      <Info>
+        <h3>Qualifing</h3>
+        <span>{getShortDayOfWeek(QualifyingDate)}</span>
+        <div>{`${convertTimeZone(QualifyingTime)} hs`}</div>
+      </Info>
+      <Info>
+        <h3>Race</h3>
+        <span>{getShortDayOfWeek(RaceDate)}</span>
+        <div>{`${convertTimeZone(RaceTime)} hs`}</div>
+      </Info>
     </InfoContainer>
   );
 };
 const InfoContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-around;
-`;
-const LeftContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  width: 50%;
-`;
-const RightContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  width: 50%;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
 const Info = styled.div`
   display: flex;

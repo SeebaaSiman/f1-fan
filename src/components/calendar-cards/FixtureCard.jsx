@@ -11,16 +11,17 @@ export const FixtureCard = ({
   date,
   title,
 }) => {
-  // Poner bandera del país con API flag
   const { getLongDate } = useCalendar();
   return (
     <NextContainer>
       <HeaderContainer>
         <FlagCountry countryName={location} />
-        <h2>{circuit}</h2>
-        <h4>round {round}</h4>
+        <h4>Round {round}</h4>
       </HeaderContainer>
-      <DateContainer>{getLongDate(date)}</DateContainer>
+      <MiddleContainer>
+        <h2>{circuit}</h2>
+        <DateContainer>{getLongDate(date)}</DateContainer>
+      </MiddleContainer>
       <AccordionCard title={title}>{children}</AccordionCard>
     </NextContainer>
   );
@@ -33,8 +34,8 @@ const NextContainer = styled.div`
   margin: 1rem;
   h3 h4 {
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin: 2rem;
   }
 `;
 const HeaderContainer = styled.div`
@@ -43,9 +44,14 @@ const HeaderContainer = styled.div`
   align-items: center;
   margin: 1rem 1rem 0 1rem;
 `;
+const MiddleContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+`;
 const DateContainer = styled.h3`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin: 1rem; */
 `;

@@ -1,6 +1,5 @@
-// import { useCountdown } from "../../hook/useCountdown ";
 import { useCountdown } from "@/hook";
-import { ExpiredCountdown ,ShowCounter} from "./";
+import { ExpiredCountdown, ShowCounter } from "./";
 
 export const CountdownTimer = ({ targetDate }) => {
   const [days, hours, minutes, seconds] = useCountdown(targetDate);

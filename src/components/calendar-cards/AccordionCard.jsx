@@ -44,6 +44,7 @@ const CardArrow = styled.span`
 const CardContent = styled.div`
   margin-top: 1rem;
   overflow: hidden;
+  width: 100%;
   height: ${({ open }) => (open ? "auto" : "0")};
   transition: height 1s ease-in-out;
 `;
