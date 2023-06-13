@@ -1,3 +1,4 @@
+import useDeviceType from "../../hook/useDeviceType";
 import {
   BgColor,
   CardContainer,
@@ -19,8 +20,9 @@ export const CardsCurrentSeason = ({
   bg,
   id,
 }) => {
+  const deviceType = useDeviceType();
   return (
-    <CardContainer variant={bg} BgColor={BgColor}>
+    <CardContainer variant={bg} BgColor={BgColor} deviceType={deviceType}>
       <HeaderContainer
         to={
           car ? `/Current-Season/Teams/${id}` : `/Current-Season/Drivers/${id}`

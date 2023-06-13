@@ -10,7 +10,6 @@ import {
   PastRaceContainer,
   Tablet,
 } from "@/components";
-import { useMemo } from "react";
 
 export const InfoPastRace = ({ round }) => {
   const { data } = useAxios(
@@ -32,23 +31,27 @@ export const InfoPastRace = ({ round }) => {
             BgColor={BgColor}
           >
             <Mobile>
-              <h5>{item.position}</h5>
+              {item.FastestLap?.rank === "1" ? (
+                <HelmetContainer>
+                  <h5>{item.position}</h5>
+                  <img
+                    src={driversHelmet[item.Driver.familyName] || ""}
+                    alt=""
+                  />
+                </HelmetContainer>
+              ) : (
+                <h5>{item.position}</h5>
+              )}
             </Mobile>
             <Tablet>
               <h5 key={index}>{item.grid}</h5>
             </Tablet>
             <Mobile ss={true}>
               {item.FastestLap?.rank === "1" ? (
-                <HelmetContainer>
-                  <h5
-                    key={index}
-                    style={{ color: "red" }}
-                  >{`${item.Driver.givenName} ${item.Driver.familyName}`}</h5>
-                  <img
-                    src={driversHelmet[item.Driver.familyName] || ""}
-                    alt=""
-                  />
-                </HelmetContainer>
+                <h5
+                  key={index}
+                  style={{ color: "red" }}
+                >{`${item.Driver.givenName} ${item.Driver.familyName}`}</h5>
               ) : (
                 <h5
                   key={index}

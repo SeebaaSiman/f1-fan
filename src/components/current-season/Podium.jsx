@@ -17,7 +17,7 @@ export const Podium = ({ position }) => {
           <IconTrophy size="2.6rem" colourtrophy="3" />
         </h1>
       ) : (
-        <h1>{position}° position</h1>
+        <h1>{position}° pos.</h1>
       )}
     </>
   );

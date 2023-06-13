@@ -59,7 +59,7 @@ export const ProfileLayout = ({ id, type }) => {
             championsWorlds={championsWorlds}
           />
         ) : (
-          <ContentTeam   constructors={constructorsName}/>
+          <ContentTeam constructors={constructorsName} />
         )}
       </Wrapper>
     </ProfileContainer>
@@ -67,13 +67,18 @@ export const ProfileLayout = ({ id, type }) => {
 };
 
 const ProfileContainer = styled.div`
+  margin-bottom: 1rem;
   span {
     display: flex;
     justify-content: center;
-    margin: 1rem;
+    align-items: center;
+    margin: 1rem auto 1rem auto;
+    width: 88%;
+    filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.4));
+
     padding: 12px;
     box-shadow: ${BoxStyle.boxShadow};
-    border-radius: 25px;
+    border-radius: 22px;
     background: ${(props) => props.BgColor[props.variant] || ""};
   }
 `;
@@ -90,14 +95,20 @@ const Wrapper = styled.div`
 `;
 
 const ImgContainer = styled.div`
+  width: 90%;
+  background-color: #e2dfdd;
   box-shadow: ${BoxStyle.boxShadow};
   border-radius: 25px;
+  filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.4));
+
   @media ${device.lg} {
     margin-left: 1rem;
   }
   img {
-    width: 562px;
-    height: 640px;
+    /* width: 562px;
+    height: 640px; */
     object-fit: cover;
+    width: 100%;
+    filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.4));
   }
 `;

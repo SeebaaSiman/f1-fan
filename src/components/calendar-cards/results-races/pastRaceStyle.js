@@ -14,9 +14,9 @@ export const PastRaceContainer = styled.div`
   @media ${device.xl} {
    min-height: 3rem;
   background: ${(props) =>
-  props.hbg
-   ? `url(${TeamCar[props.variant]}) no-repeat left / contain, ${props.BgColor[props.variant]}`
-   : ""};
+    props.hbg
+      ? `url(${TeamCar[props.variant]}) no-repeat left / contain, ${props.BgColor[props.variant]}`
+      : ""};
 }
 
   `;
@@ -25,6 +25,7 @@ export const HelmetContainer = styled.div`
   justify-content: left;
   align-items: center;
   img {
+    margin-left: 10px;
     width: 1rem;
     height: 1rem;
   }

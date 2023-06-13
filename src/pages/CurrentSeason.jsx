@@ -3,21 +3,25 @@ import styled from "styled-components";
 import * as Unicons from "@iconscout/react-unicons";
 import { Modal } from "@/components";
 import { useLayoutApp } from "@/Layout/useLayoutApp";
+import useDeviceType from "../hook/useDeviceType";
 
 export const CurrentSeason = () => {
   const { isLoading, onLoading, onLoad } = useLayoutApp();
+  const deviceType = useDeviceType();
+  const IconSize = deviceType === "desktop" ? "2.8rem" : "2rem";
   return (
     <CurrentContainer>
       <BannerContainer>
         <StyledNavLink to="Drivers" onClick={onLoading}>
-          <IconDriver size="2.8rem" />
+          <IconDriver size={IconSize} />
           <span>Drivers</span>
         </StyledNavLink>
         <StyledNavLink to="Teams" onClick={onLoading}>
-          <IconTeams size="2.8rem" />
+          <IconTeams size={IconSize} />
           <span>Teams</span>
         </StyledNavLink>
       </BannerContainer>
+
       <main onAnimationEnd={onLoad}>
         <Modal isLoading={isLoading} />
         <Outlet />
@@ -34,6 +38,7 @@ const BannerContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 0 0 30px 30px;
   padding: 5px;
 `;
 const StyledNavLink = styled(NavLink)`
@@ -42,7 +47,8 @@ const StyledNavLink = styled(NavLink)`
   display: flex;
   align-items: center;
   span {
-    font-size: 2.5rem;
+    font-size: ${(props) =>
+      props.deviceType === "desktop" ? "2.5rem" : "2rem"};
     color: #7e7e7e;
     text-decoration: none;
     &:hover {

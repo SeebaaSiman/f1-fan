@@ -72,9 +72,9 @@ export const MainContainer = styled.div`
 `;
 
 export const FooterContainer = styled.div`
-margin-top: 1.5rem;
-  padding: 2rem;
-  position:relative;
+position:relative;
+margin-top:${(props) => (props.deviceType === "desktop" ? "1.5rem" : "0.8rem")};
+  padding:${(props) => (props.deviceType === "desktop" ? "2rem" : "1rem")};
   ${({ variant }) =>
     variant === 'car' &&
     `
@@ -86,6 +86,7 @@ margin-top: 1.5rem;
       margin-top:0rem;
   }
   `}
+
   h1,
   h2,
   h3 {
@@ -96,9 +97,9 @@ margin-top: 1.5rem;
   img {
     position: absolute;
     bottom: 0%;
-    left:50%;
+    left:${(props) => (props.deviceType === "desktop" ? "50%" : "65%")};
     object-fit: contain;
-    width: 40%;
+    width:40%;
     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.8));
     @media ${device.md} {
     width: 50%;
@@ -108,6 +109,7 @@ margin-top: 1.5rem;
     margin-top: 2.2rem;
     width: 55%;
   }
+
   ${({ variant }) =>
     variant === 'car' &&
     `
