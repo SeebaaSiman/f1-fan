@@ -1,9 +1,11 @@
 import { useCalendar } from "../../../hook/useCalendar";
+import { AccordionCard } from "../AccordionCard";
 import { FixtureCard } from "../FixtureCard";
 import { InfoPastRace } from "./InfoPastRace";
 
 export const PastRaces = () => {
   const { pastRaces } = useCalendar();
+
   return (
     <>
       {pastRaces?.reverse().map((item, index) => (
@@ -13,7 +15,7 @@ export const PastRaces = () => {
           round={item.round}
           location={item.Circuit.Location.country}
           date={item.date}
-          title={"More info..."}
+          title={"More info race..."}
         >
           <InfoPastRace round={item.round} />
         </FixtureCard>

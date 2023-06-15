@@ -24,6 +24,9 @@ export const Upcoming = () => {
             QualifyingTime={item.Qualifying.time}
             RaceDate={item.date}
             RaceTime={item.time}
+            Sprint={item.Sprint}
+            SprintDate={item.Sprint?.date}
+            SprintTime={item.Sprint?.time}
           />
         </FixtureCard>
       ))}

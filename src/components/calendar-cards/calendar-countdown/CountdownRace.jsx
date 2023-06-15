@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { BoxStyle } from "@/Layout/StylesGlobal";
-import { CountdownTimer,InfoUpcoming ,AccordionCard} from "@/components";
-import { FlagCountry,useCalendar } from "@/hook";
+import { CountdownTimer, InfoUpcoming, AccordionCard } from "@/components";
+import { FlagCountry, useCalendar } from "@/hook";
 export const CountdownRace = () => {
   const { nextRace } = useCalendar();
   return (
@@ -33,6 +33,8 @@ export const CountdownRace = () => {
               QualifyingTime={nextRace.Qualifying.time}
               RaceDate={nextRace.date}
               RaceTime={nextRace.time}
+              SprintDate={nextRace.Sprint?.date}
+              SprintTime={nextRace.Sprint?.time}
             />
           </AccordionCard>
         </div>

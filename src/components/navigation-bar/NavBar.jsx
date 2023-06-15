@@ -10,6 +10,7 @@ import {
   NavBarContainer,
 } from "./NavBarStyle";
 import { useNavBar } from "./useNavBar";
+import useDeviceType from "../../hook/useDeviceType";
 
 export const NavBar = ({ onLoading }) => {
   const { clicked, handleLinkClick, toggleClicked } = useNavBar(onLoading);
@@ -19,6 +20,8 @@ export const NavBar = ({ onLoading }) => {
     height: "100%",
   };
   // const iconSize = "2rem";
+
+  const deviceType = useDeviceType();
   return (
     <NavBarContainer>
       <Logo src={logo} alt="Logo" />
@@ -38,10 +41,12 @@ export const NavBar = ({ onLoading }) => {
           <span className="text">Current Season</span>
         </NavLink>
 
-        <NavLink onClick={handleLinkClick} className="link" to="/News">
-          <Unicons.UilNewspaper style={styleIcon} />
-          <span className="text">News</span>
-        </NavLink>
+        {deviceType === "desktop" ? (
+          <NavLink onClick={handleLinkClick} className="link" to="/News">
+            <Unicons.UilNewspaper style={styleIcon} />
+            <span className="text">News</span>
+          </NavLink>
+        ) : null}
 
         <NavLink onClick={handleLinkClick} className="link" to="/History">
           <Unicons.UilChartBar style={styleIcon} />

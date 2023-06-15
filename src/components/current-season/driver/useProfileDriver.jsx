@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 import { useAxios, API_BASE_URL } from "@/hook";
 import { driversCurrent } from "@/components";
@@ -6,16 +6,21 @@ export const useProfileDriver = (id) => {
   const { data: data1 } = useAxios(
     `${API_BASE_URL}drivers/${id}/driverStandings.json`
   );
-  const depur = data1?.MRData.StandingsTable.StandingsLists;
+  const depur = useMemo(
+    () => data1?.MRData.StandingsTable.StandingsLists,
+    [data1]
+  );
   const { data: data2 } = useAxios(
     `${API_BASE_URL}current/drivers/${id}/driverStandings.json`
   );
-  const depur2 =
-    data2?.MRData.StandingsTable.StandingsLists[0].DriverStandings[0];
-  const variant = depur2?.Constructors[0].name;
-  const name = depur2?.Driver.givenName;
-  const name2 = depur2?.Driver.familyName;
-  const numberDriver = depur2?.Driver.permanentNumber;
+  const depur2 = useMemo(
+    () => data2?.MRData.StandingsTable.StandingsLists[0].DriverStandings[0],
+    [data2]
+  );
+  const variant = useMemo(() => depur2?.Constructors[0].name, [depur2]);
+  const name = useMemo(() => depur2?.Driver.givenName, [depur2]);
+  const name2 = useMemo(() => depur2?.Driver.familyName, [depur2]);
+  const numberDriver = useMemo(() => depur2?.Driver.permanentNumber, [depur2]);
   const img = driversCurrent[depur2?.Driver.familyName] || "";
 
   const [pointsTotal, setPointsTotal] = useState(0);

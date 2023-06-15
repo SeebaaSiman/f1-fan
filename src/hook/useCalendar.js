@@ -1,21 +1,29 @@
+import { useMemo } from "react";
 import { API_BASE_URL, CURRENTyear } from "./helpers";
 import { useAxios } from "./useAxios";
 
 export const useCalendar = () => {
  const { data } = useAxios(`${API_BASE_URL}${CURRENTyear}.json`);
- const races = data?.MRData.RaceTable.Races;
+ const races = useMemo(() => data?.MRData.RaceTable.Races, [data]);
 
+ const sprints = useMemo(() => races?.filter(obj => obj.Sprint), [data]);
+
+ // Saber si la carrera está por venir
  const isRaceUpcoming = (raceDate) => {
   const today = new Date();
   const raceDay = new Date(raceDate);
   return raceDay > today;
  };
 
- const restRaces = races?.filter((race) => isRaceUpcoming(race.date));
+ const restRaces = useMemo(() => races?.filter((race) => isRaceUpcoming(race.date)), [races]);
+ const pastRaces = useMemo(() => races?.filter((race) => !isRaceUpcoming(race.date)), [races]);
+ const nextRace = useMemo(() => restRaces?.[0], [restRaces]);
+ const upcomingRaces = useMemo(() => restRaces?.slice(1), [restRaces])
 
- const nextRace = restRaces?.[0];
- const upcomingRaces = restRaces?.slice(1)
- const pastRaces = races?.filter((race) => !isRaceUpcoming(race.date));
+ //Buscar si coincide el round en sprints para saber si hay sprints o no
+ const findRoundSprint = (round) => {
+  return sprints?.some(obj => obj.round === round);
+ };
 
  // output: Fri May 20 2022 00:00:00 GMT-0400 (Eastern Daylight Time)
  const convertDate = (dateString) => {
@@ -56,5 +64,5 @@ export const useCalendar = () => {
  };
 
 
- return { nextRace, getLongDate, getShortDayOfWeek, convertTimeZone, upcomingRaces, pastRaces }
+ return { nextRace, getLongDate, getShortDayOfWeek, convertTimeZone, upcomingRaces, pastRaces, findRoundSprint }
 }

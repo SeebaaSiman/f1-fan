@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import styled from "styled-components";
 import { CardsCurrentSeason } from "../CardsCurrentSeason";
 import { Logo, TeamCar } from "../dataImage";
@@ -7,8 +8,10 @@ export const TeamsSeason = () => {
   const { data } = useAxios(
     `${API_BASE_URL}${CURRENTyear}/constructorStandings.json`
   );
-  const depur =
-    data?.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
+  const depur = useMemo(
+    () => data?.MRData.StandingsTable.StandingsLists[0].ConstructorStandings,
+    [data]
+  );
 
   return (
     <Container>

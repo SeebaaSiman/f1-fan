@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { useAxios, API_BASE_URL } from "@/hook";
+import { useMemo } from "react";
 
 export const useProfileTeam = (id) => {
-  const { data: data1 } = useAxios(
-    `${API_BASE_URL}constructors/${id}/constructorStandings.json`
-  );
-
+  const { data: data1 } = useAxios(`${API_BASE_URL}/constructors/${id}.jsonn`);
   const { data: data2 } = useAxios(
     `${API_BASE_URL}drivers/${id}/driverStandings.json`
   );
-  const depur = data1?.MRData.StandingsTable.StandingsLists;
+  const depur = useMemo(
+    () => data1?.MRData.StandingsTable.StandingsLists,
+    [data1]
+  );
   const [constructorsName, setConstructorsName] = useState([]);
 
   useEffect(() => {

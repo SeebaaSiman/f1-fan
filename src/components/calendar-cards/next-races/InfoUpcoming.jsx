@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { useCalendar } from "../../../hook/useCalendar";
-import { device } from "../../../Layout/StylesGlobal";
+import { useCalendar } from "@/hook";
 
 export const InfoUpcoming = ({
   FirstPracticeDate,
@@ -11,6 +10,9 @@ export const InfoUpcoming = ({
   QualifyingTime,
   RaceDate,
   RaceTime,
+  SprintDate,
+  SprintTime,
+  Sprint,
 }) => {
   const { getShortDayOfWeek, convertTimeZone } = useCalendar();
   return (
@@ -30,6 +32,13 @@ export const InfoUpcoming = ({
         <span>{getShortDayOfWeek(QualifyingDate)}</span>
         <div>{`${convertTimeZone(QualifyingTime)} hs`}</div>
       </Info>
+      {Sprint && (
+        <Info>
+          <h3>Sprint</h3>
+          <span>{getShortDayOfWeek(SprintDate)}</span>
+          <div>{`${convertTimeZone(SprintTime)} hs`}</div>
+        </Info>
+      )}
       <Info>
         <h3>Race</h3>
         <span>{getShortDayOfWeek(RaceDate)}</span>

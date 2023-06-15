@@ -2,11 +2,15 @@ import styled from "styled-components";
 import { useAxios, API_BASE_URL, CURRENTyear } from "@/hook";
 import { CardsCurrentSeason } from "../CardsCurrentSeason";
 import { Logo, driversCurrent } from "../dataImage";
+import { useMemo } from "react";
 export const DriversSeason = () => {
   const { data } = useAxios(
     `${API_BASE_URL}${CURRENTyear}/driverStandings.json`
   );
-  const depur = data?.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+  const depur = useMemo(
+    () => data?.MRData.StandingsTable.StandingsLists[0].DriverStandings,
+    [data]
+  );
 
   return (
     <Container>
