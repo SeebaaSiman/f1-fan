@@ -31,10 +31,10 @@ export const Logo = {
 export const ProfileCar = {
  "Alfa Romeo": PC.alfaRomeoCar,
  "AlphaTauri": PC.alphaTauriCar,
- "Alpine F1 Team": PC.alpineCar,
+ "Alpine": PC.alpineCar,
  "Aston Martin": PC.astonMartinCar,
  "Ferrari": PC.ferrariCar,
- "Haas F1 Team": PC.haasCar,
+ "Haas": PC.haasCar,
  "McLaren": PC.mclarenCar,
  "Mercedes": PC.mercedesCar,
  "Red Bull": PC.redBullCar,

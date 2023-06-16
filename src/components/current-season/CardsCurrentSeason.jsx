@@ -21,13 +21,13 @@ export const CardsCurrentSeason = ({
   id,
 }) => {
   const deviceType = useDeviceType();
+  console.log(id);
+  const pathLink = car
+    ? `/Current-Season/Teams/${id}`
+    : `/Current-Season/Drivers/${id}`;
   return (
     <CardContainer variant={bg} BgColor={BgColor} deviceType={deviceType}>
-      <HeaderContainer
-        to={
-          car ? `/Current-Season/Teams/${id}` : `/Current-Season/Drivers/${id}`
-        }
-      >
+      <HeaderContainer to={pathLink}>
         <img src={logo} />
         <Divider />
         <h2>{name}</h2>

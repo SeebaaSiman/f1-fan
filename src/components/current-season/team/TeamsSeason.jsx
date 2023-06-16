@@ -25,6 +25,13 @@ export const TeamsSeason = () => {
               ? "Haas"
               : c.Constructor.name
           }
+          id={
+            c.Constructor.name === "Alpine F1 Team"
+              ? "Alpine"
+              : c.Constructor.name === "Haas F1 Team"
+              ? "Haas"
+              : c.Constructor.name
+          }
           points={c.points}
           position={c.position}
           wins={c.wins}

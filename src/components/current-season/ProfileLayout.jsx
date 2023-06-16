@@ -10,13 +10,11 @@ import {
 } from "@/components";
 export const ProfileLayout = ({ id, type }) => {
   let profileData = {};
-
   if (type === "drivers") {
     profileData = useProfileDriver(id);
-  } else if (type === "team") {
+  } else {
     profileData = useProfileTeam(id);
   }
-
   const {
     pointsTotal,
     constructorsName,
@@ -29,12 +27,14 @@ export const ProfileLayout = ({ id, type }) => {
     name2,
     numberDriver,
     img,
+    imgCar,
+    
   } = profileData;
 
   return (
     <ProfileContainer variant={variant} BgColor={BgColor}>
       <span>
-        <h1>{`${name} ${name2}`}</h1>
+        {type === "drivers" ? <h1>{`${name} ${name2}`}</h1> : <h1>{id}</h1>}
         {type === "drivers" ? (
           <>
             <Divider />
@@ -46,8 +46,8 @@ export const ProfileLayout = ({ id, type }) => {
       </span>
 
       <Wrapper>
-        <ImgContainer>
-          <img src={img} />
+        <ImgContainer ss={type}>
+          {type === "drivers" ? <img src={img} /> : <img src={imgCar} />}
         </ImgContainer>
         {type === "drivers" ? (
           <ContentDriver
@@ -59,7 +59,7 @@ export const ProfileLayout = ({ id, type }) => {
             championsWorlds={championsWorlds}
           />
         ) : (
-          <ContentTeam constructors={constructorsName} />
+          <ContentTeam id={id} />
         )}
       </Wrapper>
     </ProfileContainer>
@@ -96,7 +96,7 @@ const Wrapper = styled.div`
 
 const ImgContainer = styled.div`
   width: 90%;
-  background-color: #e2dfdd;
+  background-color: ${(props) => (props.ss === "drivers" ? "#e2dfdd" : "")};
   box-shadow: ${BoxStyle.boxShadow};
   border-radius: 25px;
   filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.4));
@@ -105,10 +105,12 @@ const ImgContainer = styled.div`
     margin-left: 1rem;
   }
   img {
-    /* width: 562px;
-    height: 640px; */
+    box-shadow: ${(props) =>
+      props.ss === "drivers" ? "" : `${BoxStyle.boxShadow}`};
+    border-radius: ${(props) => (props.ss === "drivers" ? "" : "25px")};
     object-fit: cover;
-    width: 100%;
+    width: ${(props) => (props.ss === "drivers" ? "100%" : "100%")};
+    overflow: hidden;
     filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.4));
   }
 `;

@@ -11,14 +11,10 @@ export const Layout = () => {
     <>
       <StylesGlobal />
       <NavBar onLoading={onLoading} />
-      {/* Provider modal ? */}{" "}
       <>
         <MainContainer onAnimationEnd={onLoad}>
-          {/* {isLoading && <Modal />} */}
           <Modal isLoading={isLoading} />
           {Navigation.state === "loading" && <Loader />}
-          {/* {Navigation.state === "idle" && <Loader2 />} */}
-          {/* {Navigation.state === "submitting" && <Outlet />} */}
           <Outlet />
         </MainContainer>
       </>
@@ -29,7 +25,3 @@ export const Layout = () => {
 const MainContainer = styled.main`
   position: relative;
 `;
-// <Outlet /> para renderizar los children de las rutas anidadadas
-/* background-color: #ffffff10;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); */
