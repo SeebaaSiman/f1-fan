@@ -1,8 +1,0 @@
-Al hacer click en un piloto o equipo se va a una página con toda la información del piloto o equipo, implementar las rutas /drivers/:driverId y /teams/:teamsId
-
-
-En calendar las carreras anteriores tienen un botón para ver la carrera en 2D
-
-https://github.com/yannickgloster/f1-lap-visualizer/blob/main/pages/index.js
-
-En History poner un buscador para visualizar la carrera 2D o directamente ver la tabla del campeonato

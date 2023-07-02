@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import { API_BASE_URL, CURRENTyear, useCalendar, useAxios } from "@/hook";
 import { HeaderPastRace } from "@/components";
-import { AccordionCard } from "../AccordionCard";
 import { ResultGrid } from "./ResultGrid";
 
 export const InfoPastRace = ({ round }) => {
@@ -25,9 +24,9 @@ export const InfoPastRace = ({ round }) => {
         <>
           <h1>Sprint result</h1>
           <HeaderPastRace />
+
           {sprint.map((item, index) => {
             const hbg = index < 3;
-
             return (
               <ResultGrid
                 key={index}
@@ -50,29 +49,35 @@ export const InfoPastRace = ({ round }) => {
         </>
       )}
 
-      <h1>Race result</h1>
-      <HeaderPastRace />
-      {races?.map((item, index) => {
-        const hbg = index < 3;
-
-        return (
-          <ResultGrid
-            hbg={hbg}
-            index={index}
-            variant={item.Constructor.name}
-            position={item.position}
-            fastestLap={item.FastestLap}
-            grid={item.grid}
-            familyName={item.Driver.familyName}
-            givenName={item.Driver.givenName}
-            constructorName={item.Constructor.name}
-            points={item.points}
-            status={item.status}
-            time={item.Time}
-            laps={item.laps}
-          />
-        );
-      })}
+      {races ? (
+        <>
+          <h1>Race result</h1>
+          <HeaderPastRace />
+          {races?.map((item, index) => {
+            const hbg = index < 3;
+            return (
+              <ResultGrid
+                key={index}
+                hbg={hbg}
+                index={index}
+                variant={item.Constructor.name}
+                position={item.position}
+                fastestLap={item.FastestLap}
+                grid={item.grid}
+                familyName={item.Driver.familyName}
+                givenName={item.Driver.givenName}
+                constructorName={item.Constructor.name}
+                points={item.points}
+                status={item.status}
+                time={item.Time}
+                laps={item.laps}
+              />
+            );
+          })}
+        </>
+      ) : (
+        "waiting for results"
+      )}
     </>
   );
 };

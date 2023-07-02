@@ -21,7 +21,6 @@ export const CardsCurrentSeason = ({
   id,
 }) => {
   const deviceType = useDeviceType();
-  console.log(id);
   const pathLink = car
     ? `/Current-Season/Teams/${id}`
     : `/Current-Season/Drivers/${id}`;

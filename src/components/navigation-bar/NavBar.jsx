@@ -47,13 +47,11 @@ export const NavBar = ({ onLoading }) => {
             <span className="text">News</span>
           </NavLink>
         ) : null}
-
-        <NavLink onClick={handleLinkClick} className="link" to="/History">
-          <Unicons.UilChartBar style={styleIcon} />
-          <span className="text">History</span>
-        </NavLink>
       </LinksContainer>
-
+      {/* <NavLink onClick={handleLinkClick} className="link" to="/History">
+              <Unicons.UilChartBar style={styleIcon} />
+              <span className="text">History</span>
+            </NavLink> */}
       <Menu>
         <MenuButton clicked={clicked} toggleClicked={toggleClicked} />
         <BgMenu className={`${clicked ? "open-menu" : ""} `}></BgMenu>
